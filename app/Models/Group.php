@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Group extends Model
 {
     use HasFactory;
+	protected $fillable = ['name'];
 	public function patients()
 	{
 		return $this->hasMany('App\Models\Patient');
@@ -15,6 +16,6 @@ class Group extends Model
 	
 	public function users()
 	{
-		return $this->hasMany('App\Models\Users');
+		return $this->hasMany('App\Models\User');
 	}
 }

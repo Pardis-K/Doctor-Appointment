@@ -8,10 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class User extends Model
 {
     use HasFactory;
-	
+	protected $fillable = ['name','melicode','gender','age','telephone','address','email','username','password','role','code','group_id'];
 	public function time()
 	{
-		return $this->hasOne('App\Models\Time','doctor_id','id');
+		return $this->hasOne('App\Models\Time');
 	}
 	public function group ()
 	{
@@ -26,5 +26,9 @@ class User extends Model
 	public function patients()
 	{
 		return $this->belongsToMany('App\Models\Patient');
+	}
+	public function comminucations()
+	{
+		return $this->hasMany('App\Models\Comminucation');
 	}
 }

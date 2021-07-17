@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Time extends Model
 {
     use HasFactory;
-	
+	protected $fillable = ['time','max_patient','time_id'];
 	public function users()
 	{
 		return $this->belongsToMany('App\Models\User');
@@ -21,7 +21,6 @@ class Time extends Model
 	
 	public function user()
 	{
-		return $this->belongsTo('App\Models\User','doctor_id','id');
+		return $this->belongsTo('App\Models\User');
 	}
-		
 }

@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Patient extends Model
 {
-	use HasFactory;
-	
+    use HasFactory;
+	protected $fillable = ['name','group_id'];
 	public function group ()
 	{
 		return $this->belongsTo('App\Models\Group');
