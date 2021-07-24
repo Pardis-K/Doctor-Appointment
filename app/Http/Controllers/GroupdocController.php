@@ -11,7 +11,7 @@ class GroupdocController extends Controller
 {
     public function index()
     {
-        return view('users.admin.groupdoc');
+        return view('users.doctor.groupdoc');
     }
     public function store(Request $request)
     {
@@ -24,7 +24,7 @@ class GroupdocController extends Controller
     }
     public function grouplist(){
         $groups = DB::select('select * from groups');
-        return view('users.admin.groupdoc',['groups'=>$groups]);
+        return view('users.doctor.groupdoc',['groups'=>$groups]);
      }
   
     public function removegroup($id) {
@@ -42,7 +42,7 @@ class GroupdocController extends Controller
     }
 
     public function editablegroup(Group $id){
-        return view('users.admin.editablegroup',['group'=>$id]);
+        return view('users.doctor.editablegroup',['group'=>$id]);
     }
 }
 

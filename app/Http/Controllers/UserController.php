@@ -61,7 +61,6 @@ class UserController extends Controller
             'username'=>'required|max:255',
             'password'=>'required|max:255'
         ]);
-        
         $id->name=$request->name;
         $id->melicode=$request->melicode;
         $id->username=$request->username;

@@ -12,7 +12,7 @@ class PatientController extends Controller
 {
     public function index()
     {
-        return view('users.admin.patient');
+        return view('users.doctor.patient');
     }
 
     public function store(Request $request)
@@ -22,13 +22,14 @@ class PatientController extends Controller
         ]);
         
         Patient::create([
-            'name' => $request->name ]);
+            'name' => $request->name,
+            'group_id' => $request->group_id ]);
         return back(); 
     }
     public function show() {
       $patients = DB::select('select * from patients');
       $groups = DB::select('select * from groups where id > 1');
-      return view('users.admin.patient',['patients'=>$patients],['groups'=>$groups]);
+      return view('users.doctor.patient',['patients'=>$patients],['groups'=>$groups]);
    }
    public function removepatient($id) {
     $Pnt=Patient::find($id);
@@ -45,7 +46,7 @@ class PatientController extends Controller
     }
 
     public function editablepatient(Patient $id){
-        return view('users.admin.editablepatient',['patient'=>$id]);
+        return view('users.doctor.editablepatient',['patient'=>$id]);
     }
 }
 

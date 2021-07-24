@@ -18,20 +18,16 @@ class CreatePatientTimeUsersTable extends Migration
 			
 			$table->unsignedBigInteger('time_id');
 
-            $table->foreign('time_id')->references('id')->on('times');
+            $table->foreign('time_id')->references('time_id')->on('times');
 		
 			$table->foreignId('user_id')->constrained();
 			
 			$table->foreignId('patient_id')->constrained();
 			
-			$table->string('reserve_date')->nullable();
-			$table->string('reserve_time')->nullable();
-			$table->string('visit_date')->nullable();
-			$table->string('visit_time')->nullable();
+			$table->DATE('reserve_date')->nullable();
+			$table->DATETIME('visit_date')->nullable();
 			$table->string('doctor_comment')->nullable();
 			$table->string('drugs')->nullable();
-			$table->boolean('send_sms')->nullable();
-			$table->boolean('cancel_sms')->nullable();
 			
             $table->timestamps();
         });

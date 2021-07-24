@@ -9,11 +9,6 @@ class Group extends Model
 {
     use HasFactory;
 	protected $fillable = ['name'];
-	public function patients()
-	{
-		return $this->hasMany('App\Models\Patient');
-	}
-	
 	public function users()
 	{
 		return $this->hasMany('App\Models\User');

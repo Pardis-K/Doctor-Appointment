@@ -15,7 +15,8 @@ class CreateTimesTable extends Migration
     {
         Schema::create('times', function (Blueprint $table) {
             $table->id();
-			$table->string('time');
+			$table->DATETIME('starttime');
+			$table->DATETIME('endtime');
 			$table->integer('max_patient');
 			
 			$table->unsignedBigInteger('time_id');

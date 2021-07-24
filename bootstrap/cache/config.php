@@ -4,13 +4,13 @@
     'name' => 'Laravel',
     'env' => 'local',
     'debug' => true,
-    'url' => 'http://localhost',
+    'url' => 'http://Doctorappointmentfixed.test',
     'asset_url' => NULL,
     'timezone' => 'Asia/Tehran',
     'locale' => 'en',
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
-    'key' => 'base64:Ub+WHVtgeeB3FDYW3bQ+D5OAn/73u6mQBn7O5qZtdSM=',
+    'key' => 'base64:gMRnZdcEudbNeIcAV2owk9+XuHXiPpvSF60MI0f5Mec=',
     'cipher' => 'AES-256-CBC',
     'providers' => 
     array (
@@ -68,6 +68,7 @@
       'Notification' => 'Illuminate\\Support\\Facades\\Notification',
       'Password' => 'Illuminate\\Support\\Facades\\Password',
       'Queue' => 'Illuminate\\Support\\Facades\\Queue',
+      'RateLimiter' => 'Illuminate\\Support\\Facades\\RateLimiter',
       'Redirect' => 'Illuminate\\Support\\Facades\\Redirect',
       'Request' => 'Illuminate\\Support\\Facades\\Request',
       'Response' => 'Illuminate\\Support\\Facades\\Response',
@@ -183,7 +184,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'C:\\Users\\Pardis\\Documents\\DoctorAppointment\\storage\\framework/cache/data',
+        'path' => 'C:\\Users\\Pardis\\Documents\\Doctorappointmentfixed\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -221,6 +222,10 @@
         'region' => 'us-east-1',
         'table' => 'cache',
         'endpoint' => NULL,
+      ),
+      'octane' => 
+      array (
+        'driver' => 'octane',
       ),
     ),
     'prefix' => 'laravel_cache',
@@ -262,7 +267,7 @@
       array (
         'driver' => 'sqlite',
         'url' => NULL,
-        'database' => 'doctorappointment',
+        'database' => 'doctorfixed',
         'prefix' => '',
         'foreign_key_constraints' => true,
       ),
@@ -272,7 +277,7 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'doctorappointment',
+        'database' => 'doctorfixed',
         'username' => 'root',
         'password' => '',
         'unix_socket' => '',
@@ -292,7 +297,7 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'doctorappointment',
+        'database' => 'doctorfixed',
         'username' => 'root',
         'password' => '',
         'charset' => 'utf8',
@@ -307,7 +312,7 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'doctorappointment',
+        'database' => 'doctorfixed',
         'username' => 'root',
         'password' => '',
         'charset' => 'utf8',
@@ -350,13 +355,13 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\Users\\Pardis\\Documents\\DoctorAppointment\\storage\\app',
+        'root' => 'C:\\Users\\Pardis\\Documents\\Doctorappointmentfixed\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\Users\\Pardis\\Documents\\DoctorAppointment\\storage\\app/public',
-        'url' => 'http://localhost/storage',
+        'root' => 'C:\\Users\\Pardis\\Documents\\Doctorappointmentfixed\\storage\\app/public',
+        'url' => 'http://Doctorappointmentfixed.test/storage',
         'visibility' => 'public',
       ),
       's3' => 
@@ -368,11 +373,12 @@
         'bucket' => '',
         'url' => NULL,
         'endpoint' => NULL,
+        'use_path_style_endpoint' => false,
       ),
     ),
     'links' => 
     array (
-      'C:\\Users\\Pardis\\Documents\\DoctorAppointment\\public\\storage' => 'C:\\Users\\Pardis\\Documents\\DoctorAppointment\\storage\\app/public',
+      'C:\\Users\\Pardis\\Documents\\Doctorappointmentfixed\\public\\storage' => 'C:\\Users\\Pardis\\Documents\\Doctorappointmentfixed\\storage\\app/public',
     ),
   ),
   'hashing' => 
@@ -406,13 +412,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'C:\\Users\\Pardis\\Documents\\DoctorAppointment\\storage\\logs/laravel.log',
+        'path' => 'C:\\Users\\Pardis\\Documents\\Doctorappointmentfixed\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'C:\\Users\\Pardis\\Documents\\DoctorAppointment\\storage\\logs/laravel.log',
+        'path' => 'C:\\Users\\Pardis\\Documents\\Doctorappointmentfixed\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -463,7 +469,7 @@
       ),
       'emergency' => 
       array (
-        'path' => 'C:\\Users\\Pardis\\Documents\\DoctorAppointment\\storage\\logs/laravel.log',
+        'path' => 'C:\\Users\\Pardis\\Documents\\Doctorappointmentfixed\\storage\\logs/laravel.log',
       ),
     ),
   ),
@@ -520,7 +526,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'C:\\Users\\Pardis\\Documents\\DoctorAppointment\\resources\\views/vendor/mail',
+        0 => 'C:\\Users\\Pardis\\Documents\\Doctorappointmentfixed\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -603,7 +609,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'C:\\Users\\Pardis\\Documents\\DoctorAppointment\\storage\\framework/sessions',
+    'files' => 'C:\\Users\\Pardis\\Documents\\Doctorappointmentfixed\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -623,9 +629,9 @@
   array (
     'paths' => 
     array (
-      0 => 'C:\\Users\\Pardis\\Documents\\DoctorAppointment\\resources\\views',
+      0 => 'C:\\Users\\Pardis\\Documents\\Doctorappointmentfixed\\resources\\views',
     ),
-    'compiled' => 'C:\\Users\\Pardis\\Documents\\DoctorAppointment\\storage\\framework\\views',
+    'compiled' => 'C:\\Users\\Pardis\\Documents\\Doctorappointmentfixed\\storage\\framework\\views',
   ),
   'flare' => 
   array (
