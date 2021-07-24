@@ -1,31 +1,40 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use  App\Http\Controllers\RegisterController;
-use  App\Http\Controllers\LoginController;
-use  App\Http\Controllers\DashboardController;
-use  App\Http\Controllers\LogoutController;
 use  App\Http\Controllers\GroupdocController;
 use  App\Http\Controllers\PatientController;
 use  App\Http\Controllers\DoctorTimeController;
+use App\Http\Controllers\MainAdmin;
+use App\Http\Controllers\MainDoctorController;
+use App\Http\Controllers\MainPatient;
+use App\Http\Controllers\ReserveController;
+use App\Http\Controllers\ReserveeController;
 use  App\Http\Controllers\UserController;
-use  App\Http\Controllers\ReserveController;
-use  App\Http\Controllers\VisitController;
 
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
 
-Route::get('/',function(){
+Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/register', [RegisterController::class,'index'])->name('register');
-Route::post('/register', [RegisterController::class,'store']);
 
-Route::get('/login', [LoginController::class,'index'])->name('login');
-Route::post('/login', [LoginController::class,'store']);
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
-Route::get('/dashboard', [DashboardController::class,'index'])->name('dashboard');
+Route::get('/MainAdmin', [MainAdmin::class,'index'])->name('MainAdmin');
+Route::get('/MainDoctor', [MainDoctorController::class,'index'])->name('MainDoctor');
 
-Route::get('/logout', [LogoutController::class,'store'])->name('logout');
-
+Route::get('/MainPatient', [MainPatient::class,'index'])->name('MainPatient');
+Route::get('/MainPatient', [MainPatient::class,'show'])->name('MainPatient');
 
 Route::get('/Groupdoc', [GroupdocController::class,'index'])->name('Groupdoc');
 Route::post('/Groupdoc', [GroupdocController::class,'store']);
@@ -59,12 +68,11 @@ Route::get('/Reserve', [ReserveController::class,'index'])->name('Reserve');
 Route::post('/FReserve', [ReserveController::class,'show'])->name('FReserve');
 Route::get('/Reserve', [ReserveController::class,'doctorlist'])->name('Reserve');
 Route::get('/Reserve/{id}', [ReserveController::class,'nobat']);
-Route::get('/Reserve', [ReserveController::class,'doctorlist'])->name('Reserve');
-Route::get('/Reserve', [ReserveController::class,'doctorlist'])->name('Reserve');
 
-Route::get('/Visit', [VisitController::class,'index'])->name('Visit');
-Route::post('/Visit', [VisitController::class,'show'])->name('Visit');
-/*Route::get('/Visit', [VisitController::class,'doctorlist'])->name('Visit');
-Route::get('/Visit/{id}', [VisitController::class,'nobat']);
-Route::get('/Visit', [VisitController::class,'doctorlist'])->name('Visit');*/
-//Route::get('/Visit', [VisitController::class,'doctorlist'])->name('Visit');
+
+Route::get('/Reservee', [ReserveeController::class,'index'])->name('Reservee');
+Route::get('/Reservee', [ReserveeController::class,'show'])->name('Reservee');
+Route::post('/Visit', [ReserveeController::class,'store'])->name('Visit');
+Route::get('/Fvisit', [ReserveeController::class,'visit'])->name('Fvisit');
+
+require __DIR__.'/auth.php';
